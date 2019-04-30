@@ -1,18 +1,20 @@
-const express = require('express')
-const helmet = require('helmet')
+/**
+ * 
+ * @authors Sophie
+ * @date    2019-04-30 17:16:30 
+ */
+var express = require('express');
+var app = express();
+ 
+PORT = process.env.PORT || 5000 
 
-const app = express()
+srv = app.listen(PORT)
 
-// add some security-related headers to the response
-app.use(helmet())
+console.log("Server is listening on port: " + PORT)
 
-app.get('*', (req, res) => {
-    res.set('Content-Type', 'text/html')
-    // res.status(200).send(`
-    //     <h1><marquee direction=right>Hello from Express path '/' on Now 2.0!</marquee></h1>
-    //     <h2>Go to <a href="/about">/about</a></h2>
-    // `)
-    res.send("Hello , this is the root of our service!")
+app.get('/', function (req, res) {
+
+   res.send('Hello World! <br/> This is the root our service!');
 })
+ 
 
-module.exports = app
