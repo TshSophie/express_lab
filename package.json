@@ -5,11 +5,12 @@
   "main": "index.js",
   "dependencies": {
     "express": "^4.16.4",
+    "mongodb": "^3.2.5",
     "peer": "^0.2.10"
   },
   "devDependencies": {},
   "scripts": {
-    "start":"node index.js",
+    "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
